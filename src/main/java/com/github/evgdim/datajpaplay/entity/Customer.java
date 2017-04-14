@@ -1,4 +1,3 @@
-// tag::sample[]
 package com.github.evgdim.datajpaplay.entity;
 
 import javax.persistence.Entity;
