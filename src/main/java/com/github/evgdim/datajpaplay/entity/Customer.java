@@ -2,9 +2,11 @@
 package com.github.evgdim.datajpaplay.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -16,6 +18,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     @ManyToOne
+    @JoinColumn(name="category_id", foreignKey=@ForeignKey(name="fk_cust_category"))
     private CustomerCategory category;
 
     protected Customer() {}
