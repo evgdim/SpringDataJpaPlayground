@@ -6,10 +6,16 @@ import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(indexes = {
+		@Index( columnList="category_id", name="ix_cust_category" ),
+		@Index( columnList="firstName", name="ix_cust_first_name" )
+	})
 public class Customer {
 
     @Id
@@ -28,10 +34,6 @@ public class Customer {
         this.lastName = lastName;
         this.category = category;
     }
-
-
-
-// end::sample[]
 
 	@Override
 	public String toString() {
