@@ -35,6 +35,10 @@ public class Application {
 			customerRepo.updateNameByIds("newName", Arrays.asList(cust.getId()));
 			
 			customerRepo.findAll().forEach(c -> log.info(c.toString()));
+			
+			customerRepo.deleteByCategoryId(customerCategory.getId());
+			
+			customerRepo.findAll().forEach(c -> log.info(c.toString()));
 		};
 	}
 
