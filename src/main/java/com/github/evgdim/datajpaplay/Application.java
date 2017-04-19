@@ -36,7 +36,7 @@ public class Application {
 			
 			customerRepo.findAll().forEach(c -> log.info(c.toString()));
 			
-			customerRepo.deleteByCategoryId(customerCategory.getId());
+			customerRepo.deleteByCategoryIdSession(customerCategory.getId());
 			
 			customerRepo.findAll().forEach(c -> log.info(c.toString()));
 		};
