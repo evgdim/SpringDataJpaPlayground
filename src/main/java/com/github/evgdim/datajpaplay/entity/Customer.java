@@ -10,11 +10,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 @Entity
 @Table(indexes = {
 		@Index( columnList="category_id", name="ix_cust_category" ),
 		@Index( columnList="firstName", name="ix_cust_first_name" )
 	})
+@Data
 public class Customer {
 
     @Id
@@ -34,22 +37,6 @@ public class Customer {
         this.category = category;
     }
 
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", category=" + category
-				+ "]";
-	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
 }
 
