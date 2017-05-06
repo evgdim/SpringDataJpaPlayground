@@ -1,6 +1,7 @@
 package com.github.evgdim.datajpaplay.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -13,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.github.evgdim.datajpaplay.entity.embeddables.PersonalIdInfo;
 import com.github.evgdim.datajpaplay.entity.enums.CustomerEntityType;
 
 import lombok.Data;
@@ -36,6 +38,8 @@ public class Customer {
     private CustomerCategory category;
     @Enumerated(EnumType.STRING)
     private CustomerEntityType entityType;
+    @Embedded
+    private PersonalIdInfo personalIdInfo;
 
     protected Customer() {}
 
