@@ -1,6 +1,8 @@
 package com.github.evgdim.datajpaplay.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +11,8 @@ import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.github.evgdim.datajpaplay.entity.enums.CustomerEntityType;
 
 import lombok.Data;
 
@@ -28,6 +32,8 @@ public class Customer {
     @ManyToOne
     @JoinColumn(name="category_id", foreignKey=@ForeignKey(name="fk_cust_category"))
     private CustomerCategory category;
+    @Enumerated(EnumType.STRING)
+    private CustomerEntityType entityType;
 
     protected Customer() {}
 
