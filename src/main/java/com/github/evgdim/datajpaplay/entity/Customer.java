@@ -1,5 +1,6 @@
 package com.github.evgdim.datajpaplay.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -27,6 +28,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @Column(length=100, nullable=false)
     private String firstName;
     private String lastName;
     @ManyToOne
