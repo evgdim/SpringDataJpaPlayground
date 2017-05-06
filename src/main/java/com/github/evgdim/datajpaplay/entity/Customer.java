@@ -14,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Type;
+
 import com.github.evgdim.datajpaplay.entity.embeddables.PersonalIdInfo;
 import com.github.evgdim.datajpaplay.entity.enums.CustomerEntityType;
 
@@ -40,6 +42,9 @@ public class Customer {
     private CustomerEntityType entityType;
     @Embedded
     private PersonalIdInfo personalIdInfo;
+    @Type(type="yes_no")
+    @Column(length=1)
+    private boolean isActive;
 
     protected Customer() {}
 

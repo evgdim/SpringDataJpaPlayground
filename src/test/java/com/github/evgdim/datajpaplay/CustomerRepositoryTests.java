@@ -64,4 +64,11 @@ public class CustomerRepositoryTests {
     	entityManager.refresh(cust);
     	assertEquals("updated name matches", "newName", cust.getFirstName());
     }
+    
+    @Test
+    public void storeBooleanTest() {
+    	Customer cust = new Customer("boolTest", "boolTest", null);
+    	cust.setActive(true);
+    	customerRepository.save(cust);
+    }
 }
