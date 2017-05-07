@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="PROJECT_TYPE")
 public class Project {
 	@Id
