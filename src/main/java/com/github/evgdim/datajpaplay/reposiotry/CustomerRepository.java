@@ -4,13 +4,14 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.github.evgdim.datajpaplay.entity.Customer;
 
-public interface CustomerRepository extends CrudRepository<Customer, Long>, CustomerRepositoryCustom {
+public interface CustomerRepository extends CrudRepository<Customer, Long>, CustomerRepositoryCustom, JpaSpecificationExecutor {
     List<Customer> findByLastName(String lastName);
     @Transactional
     @Modifying

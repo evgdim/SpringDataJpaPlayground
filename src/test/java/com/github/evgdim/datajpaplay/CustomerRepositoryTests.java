@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 import java.util.List;
 
+import com.github.evgdim.datajpaplay.reposiotry.specification.CustomerSpecifications;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -70,5 +71,10 @@ public class CustomerRepositoryTests {
     	Customer cust = new Customer("boolTest", "boolTest", null);
     	cust.setActive(true);
     	customerRepository.save(cust);
+    }
+
+    @Test
+    public void specificationTest() {
+        customerRepository.findAll(CustomerSpecifications.isLegalEntity());
     }
 }
